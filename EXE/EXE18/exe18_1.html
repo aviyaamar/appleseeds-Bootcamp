@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" /
+>
+ <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+ <title>Document</title>
+ </head>
+ <body>
+ <h1>Header</h1>
+ <p>Paragraph</p>
+ <a href="#">link</a>
+ <img src="" alt="" />
+ <div class="x">Div with a class</div>
+ <div id="y">Div with an id</div>
+ <input type="text" />
+ <input type="text" />
+ <input type="text" />
+ </body>
+ <script>
+ //Select all elements inside the body and store each element in a separate variable and print them to the console.
+ ////Select all elements not using the querySelector method.
+ let h1Get = document.getElementsByTagName('h1');
+ let pGet = document.getElementsByTagName('p');
+ let imgGet = document.getElementsByTagName('img');
+ let aGet = document.getElementsByTagName('a');
+ let xClassGet = document.getElementsByClassName('x');
+ let yIdGet =  document.getElementById('y')
+
+ console.log(`h1: ${h1Get} +  p:${pGet} + img:${imgGet} + a:${aGet} + x:${xClassGet} + y:${yIdGet}`);
+
+ let inputTagGet = document.getElementsByTagName('input')
+ let inputTagGet1 = inputTagGet[0];
+ console.log(inputTagGet1);
+ let inputTagGet2 = inputTagGet[1];
+ console.log(inputTagGet2);
+ let inputTagGet3 = inputTagGet[2];
+ console.log(inputTagGet3);
+
+ // Select all elements using querySelector method
+ let h1QSelect =  document.querySelector('h1');
+ let pQSlecet = document.querySelector('p')
+ let imgQSelect = document.querySelector('img')
+ let aQSelect = document.querySelector('a')
+ let xClassSelect  = document.querySelector('.x')
+ let yIDSelece = document.querySelector('#id')
+
+
+ let allInput = document.querySelectorAll('input');
+    let input1Select = allInput[0];
+    console.log(input1Select);
+    let input2Select = allInput[1];
+    console.log(input2Select);
+    let input3Select = allInput[2];
+    console.log(input3Select);
+
+
+//Select all inputs and iterate over them with the forEach 
+const allInputSelect = allInput.forEach((element)=>{
+    console.log(element)
+})
+
+const allInputGet = inputTagGet.forEach((element)=>{
+    console.log(element);
+})
+
+ </script>
+</html>

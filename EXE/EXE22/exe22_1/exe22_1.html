@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      
+    }
+    .display {
+      text-align: center;
+      
+    }
+  
+    .display {
+      display: none;
+    }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <div class="content">
+          <h1>Enter Your Deatails:</h1>
+          <input class="name" name="name" type="text" placeholder="name" />
+          <input class="age" name="age" type="number" placeholder="age" />
+          <input class="email" name="email" type="email" placeholder="Email" />
+          <input class="btn" type="submit" value="Submit" />
+        </div>
+        <div class="display">
+          <h3>Please conform your info:</h3>
+          <ul>
+            <li class="nameLi">Your Name is:</li>
+            <li class="ageLi">Your Age is:</li>
+            <li class="emailLI">Your Email is:</li>
+          </ul>
+          <input class="confirm" type="submit" value="Confirm" />
+          <button class="change">i want a change</button>
+        </div>
+      </form>
+</body>
+
+<script>
+    const name = document.querySelector('.name')
+    const age = document.querySelector('.age')
+    const email = document.querySelector('.email')
+    const submit = document.querySelector('.btn')
+    const formData = {}
+
+    const display = document.querySelector('.display')
+    const nameLi = document.querySelector('.nameLi');
+    const ageLi = document.querySelector('.ageLi');
+    const emailLi = document.querySelector('.emailLI')
+
+    const confirm = document.querySelector('.confirm')
+    const change = document.querySelector('.change')
+
+    const content = document.querySelector('.content')
+    const displayNone = document.querySelector('.display')
+
+    for(let input of [name, age, email]){
+        input.addEventListener('change', (e)=>{
+            formData[e.target.name]= e.target.value;
+            console.log(formData)
+        })
+    }
+    submit.addEventListener('click',(e)=>{
+         e.preventDefault();
+        nameLi.innerText += `${formData['name']}`;
+        ageLi.innerText += `${formData['age']}`;
+        emailLi.innerText += `${formData['email']}`
+        content.classList.toggle('display')
+        displayNone.classList.toggle('display')
+    })
+
+    change.addEventListener("click", (e) => {
+        content.classList.toggle("display");
+        displayNone.classList.toggle("display");
+      e.preventDefault();
+    })
+
+</script>
+</html>
